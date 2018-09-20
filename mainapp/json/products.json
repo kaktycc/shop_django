@@ -1,0 +1,47 @@
+[
+  {
+    "category": "Седан",
+    "name": "Седан",
+    "image": "prod_images/volvos602018.jpg",
+    "short_desc": "Volvo S 60",
+    "description": "",
+    "price": "150000",
+    "quantity": "14"
+  },
+  {
+    "category": "Внедорожник",
+    "name": "Внедорожник",
+    "image": "prod_images/volvov602018.jpg",
+    "short_desc": "Volvo V 60",
+    "description": "",
+    "price": "300000",
+    "quantity": "50"
+  },
+    {
+    "category": "Внедорожник",
+    "name": "Внедорожник",
+    "image": "prod_images/volvov902018.jpg",
+    "short_desc": "Volvo V 90",
+    "description": "",
+    "price": "130000",
+    "quantity": "50"
+  },
+  {
+    "category": "Хэтчбек",
+    "name": "Хэтчбек",
+    "image": "prod_images/volvoxc602018.jpg",
+    "short_desc": "Volvo XC 60",
+    "description": "",
+    "price": "178000",
+    "quantity": "1415"
+  },
+  {
+    "category": "Универсал",
+    "name": "Универсал",
+    "image": "prod_images/volvoxc902018.jpg",
+    "short_desc": "Volvo XC 90",
+    "description": "",
+    "price": "390000",
+    "quantity": "140"
+  }
+]

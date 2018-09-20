@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<div class="headContent">
+    <h3>Каталог</h3>
+    <div class="categories">
+        <ul>
+            <li>
+                    <a href="{% url 'products:category' 0 %}"
+                class="{% if request.resolver_match.kwargs.pk == '0' %}
+                         active
+                       {% endif %}">
+                    Все
+                </a>
+            </li>
+            {% for category in categories %}
+            <li>
+                {% if category.is_active %}
+                <a href="{% url 'products:category' category.pk %}"
+                class="{% if product.category.id  == category.pk %}
+                         active
+                       {% endif %}">
+                    {{ category.name }}
+                </a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+

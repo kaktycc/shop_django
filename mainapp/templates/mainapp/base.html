@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ page_title | title}}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+
+<div class="container">
+    {% block datetime %}
+        {{ date_time }}
+    {% endblock %}
+    {% block container %}
+
+
+    {% endblock %}
+    <div class="footer">&copy; Все права защищены</div>
+</div>
+</body>
+</html>

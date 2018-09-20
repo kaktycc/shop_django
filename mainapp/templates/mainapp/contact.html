@@ -1,0 +1,36 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block container %}
+
+{% include 'mainapp/includes/inc_mainmenu.html' %}
+<hr>
+<div id="content">
+    <h3>Напишите нам</h3>
+    <form action="#form.php" method="get">
+        <fieldset>
+            <legend>Обратная связь</legend>
+            <p id="feedback">
+                <input id="name" placeholder="Имя" type="text">
+                <br>
+                <input id="email" placeholder="Email" type="email">
+                <br>
+                <input id="subject" placeholder="Тема обращения" type="text">
+                <br><br>
+                <label for="textField">Ваше обращение:</label><br>
+                <textarea id="textField"></textarea>
+            </p>
+            <br>
+            <button>Отправить</button>
+        </fieldset>
+    </form>
+
+    <h3>Адрес</h3>
+    <p><b>Наш номер телефона:</b> 8-800-777-55-00</p>
+    <p><b>Мы находимся по адресу:</b> 183038 г. Мурманск, ул. Коммуны, 18а</p>
+    <p><b>Email:</b> volvofakemagazin@volvo.com</p>
+    <script type="text/javascript" charset="utf-8" async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af12cb7e909736da6d55bf64f631e637b7530125985531d6c8650424df3d8eed0&amp;width=100%&amp;height=375&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+<hr>
+{% endblock %}

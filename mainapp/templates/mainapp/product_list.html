@@ -1,0 +1,44 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block container %}
+
+{% include 'mainapp/includes/inc_mainmenu.html' %}
+
+<div id="content">
+    {% include 'mainapp/includes/inc_podmenu.html' %}
+
+    <div class="products">
+        <h2>
+            Категория: "{{ category.name|title }}"
+        </h2>
+        <div class="paginator">
+        {% if products.has_previous %}
+            <a href ="{% url 'products:page' category.pk products.previous_page_number %}">
+                < Назад
+            </a>
+        {% endif %}
+        <span class="current">
+        страница {{ products.number }} из
+        {{ products.paginator.num_pages }}
+        </span>
+        {% if products.has_next %}
+            <a href="{% url 'products:page' category.pk products.next_page_number %}">
+                Вперёд >
+            </a>
+        {% endif %}
+        </div>
+
+        {% for product in products %}
+        <div class="product">
+            {{ product.short_desc }}
+            <a href="{% url 'products:product' product.pk %}">
+                <img src="/media/{{ product.image }}" alt="product">
+            </a>
+            <p>{{ product.description }}</p>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

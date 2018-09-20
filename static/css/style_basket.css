@@ -1,0 +1,20 @@
+
+.basket_rec {
+    margin-bottom: 10px;
+    height: 150px;
+}
+
+.basket_rec img {
+
+    height: 186px;
+    width: 220px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input {
+     width: 45px;
+}
+

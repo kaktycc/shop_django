@@ -1,0 +1,17 @@
+{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+{% block datetime %}
+    {{ date_time }}
+{% endblock %}
+{% include 'mainapp/includes/inc_mainmenu.html' %}
+<h2>Редактирование профиля</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ edit_form.as_p }}
+    <input type="submit" value="Сохранить">
+</form>
+<div class="user_avatar"><img src="/media/{{ user.avatar }}" alt=""></div>
+
+{% endblock %}

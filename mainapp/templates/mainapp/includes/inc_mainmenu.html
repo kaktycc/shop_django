@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<div class="header">
+    <img src="{% static '/images/volvo-logo.png' %}" alt="logo">
+    <div id="menu">
+        <ul>
+            <li><a href="{% url 'main' %}">Главная</a></li>
+            <li><a href="{% url 'products:main_prod' %}">Каталог</a></li>
+            <li><a href="{% url 'contact' %}">Контакты</a></li>
+
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'auth:edit' %}">
+                {{ user.username|default:'Пользователь' }}
+            </a></li>
+            {% endif %}
+            {% if user.is_superuser %}
+             <li><a href="{% url 'admin:main' %}">Админка</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'auth:logout' %}">Выйти</a></li>
+            {% else %}
+            <li><a href="{% url 'auth:login' %}">Войти</a></li>
+            {% endif %}
+            <li>
+            <a href="{% url 'basket:view' %}" class="basket">
+                {% if basket %}
+                    {{ basket.0.total_cost|floatformat:0 }} руб.
+                    {{ basket.0.total_quantity }} шт.
+                {% endif %}
+
+            </a>
+            </li>
+        </ul>
+    </div>
+</div>

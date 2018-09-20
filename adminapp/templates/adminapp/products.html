@@ -1,0 +1,50 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="objects_list">
+    <button class="new_category">
+        <a href="{% url 'admin:product_create' category_products.pk %}">
+        новый продукт
+        </a>
+    </button>
+    {% for object in object_list %}
+    <div
+            class="object_record {% if not object.is_active %}not_active{% endif %}">
+        <div class="object_role">
+            <button>
+                <a href="{% url 'admin:product_update' object.pk %}">
+                редактировать
+                </a>
+            </button>
+            <button>
+                {% if object.is_active %}
+                <a href="{% url 'admin:product_delete' object.pk %}">
+                удалить
+                </a>
+                {% else %}
+                <a href="{% url 'admin:product_repair' object.pk %}">
+                восстановить
+                </a>
+                {% endif %}
+            </button>
+        </div>
+        <div class="object_info">
+        <div class="object_name">
+            <p><strong>{{ object.name }}</strong></p>
+            <p>
+                {% if object.description %}
+                <b>{{ object.description }}</b>
+                </p>
+            {% endif %}
+            <img
+                src="/media/{{ object.image|default:'users_avatars/default.png' }}"
+                alt="{{ object.name }}">
+            <span>{{ object.short_desc }}</span>
+            <span>Цена: {{ object.price }}</span>
+            <span>Количество: {{ object.quantity }}</span>
+        </div>
+    </div>
+        </div>
+    {% endfor%}
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style_basket.css' %}">
+    {% block js %}
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/basket_script.js' %}"></script>
+    {% endblock %}
+</head>
+<body>
+
+<div class="container">
+    {% block datetime %}
+    {{ date_time }}
+    {% endblock %}
+    {% include 'mainapp/includes/inc_mainmenu.html' %}
+    <h2>Ваша корзина</h2>
+    <div class="basket_list">
+        {% include 'basketapp/includes/inc_basket_list.html' %}
+        </div>
+
+</div>
+</body>
+</html>

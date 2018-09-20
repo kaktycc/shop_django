@@ -1,0 +1,26 @@
+
+.btnRegister {
+    width: 100%;
+    height: 35px;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+input {
+     width: 100%;
+    height: 35px;
+    font-size: 25px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.errorlist {
+    font-size: 10px;
+    color:red;
+}
+
+p .helptext {
+    color: green;
+}

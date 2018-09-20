@@ -1,0 +1,37 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block container %}
+
+{% include 'mainapp/includes/inc_mainmenu.html' %}
+
+<div class="container">
+    {% include 'mainapp/includes/inc_podmenu.html' %}
+    <h3 class="hot_product">Горячее предложение!</h3>
+    <div class="main-product">
+        <a href="{% url 'products:product' hot_product.pk %}">
+        <img src="/media/{{ hot_product.image }}" alt="">
+            </a>
+    </div>
+    <div class="shortDescriptiondiv">
+        <span class="cat_name">{{ hot_product.category }}</span>
+        <span class="product_name">{{ hot_product.short_desc }}</span>
+        <span class="hot_product_price">Всего за {{ hot_product.price }} руб.</span>
+        <a href="{% url 'basket:add' hot_product.pk %}">Купить {{ product.short_desc }}</a>
+    </div>
+
+    <hr>
+    <h3 class="same_products_h">Похожие товары</h3>
+    {% for product in same_product %}
+    <a href="{% url 'products:product' product.pk %}">
+    <div class="same_products">
+        <img src="/media/{{ product.image }}" alt="">
+    </div>
+    <div class="shortDescriptiondiv">
+        <span class="cat_name">{{ hot_product.category }}</span>
+        <span class="product_name">{{ hot_product.short_desc }}</span>
+    </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+.admin_container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+.admin_menu li {
+    list-style-type: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.admin_menu a{
+    color: #1860dd;
+}
+
+.admin_menu a {
+    text-decoration: none;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 10px 0 10px 0;
+}
+
+.admin_menu a:hover {
+    background: #d0e1ff;
+    color: #103471;
+}
+
+.admin_menu {
+    text-align: center;
+}
+
+.objects_list {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.new_user a{
+    text-decoration: none;
+}
+
+button a{
+    text-decoration: none;
+}
+
+.object_record {
+    margin-top: 35px;
+}
+
+.not_active {
+    color: #a4a4a4;
+}
+
+.object_record img{
+    width: 12%;
+    float: left;
+}
+
+.object_role {
+    float: right;
+}
+
+.object_info {
+    padding-left: 200px;
+}
+
+.user_age, .user_email, .user_lastlogin {
+    margin-bottom: 10px;
+}
+
+.btn_cancel {
+    width: 100%;
+    height: 35px;
+    font-size: 25px;
+}
+
+#id_description {
+    width: 960px;
+}

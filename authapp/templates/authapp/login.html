@@ -1,0 +1,26 @@
+{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+{% block datetime %}
+    {{ date_time }}
+{% endblock %}
+{% include 'mainapp/includes/inc_mainmenu.html' %}
+
+<h2>Авторизация</h2>
+<form method="post">
+    {% csrf_token %}
+    {% if next %}
+        <input type="hidden" name="next" value="{{ next }}">
+    {% endif %}
+    {{ form.as_p }}
+
+    <input type="submit" value="Войти">
+</form>
+
+<a href="{% url 'auth:register' %}">
+    <input class="btnRegister" type="submit" value="Регистрация">
+</a>
+
+
+{% endblock %}
